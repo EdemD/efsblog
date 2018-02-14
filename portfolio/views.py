@@ -108,7 +108,7 @@ def investment_new(request):
            investment = form.save(commit=False)
            investment.created_date = timezone.now()
            investment.save()
-           investments = Investment.objects.filter(purchase_date__lte=timezone.now())
+           investments = Investment.objects.filter(recent_date__lte=timezone.now())
            return render(request, 'portfolio/investment_list.html',
                          {'investments': investments})
    else:
@@ -127,7 +127,7 @@ def investment_edit(request, pk):
            # investment.customer = investment.id
            investment.updated_date = timezone.now()
            investment.save()
-           investments = Investment.objects.filter(purchase_date__lte=timezone.now())
+           investments = Investment.objects.filter(recent_date__lte=timezone.now())
            return render(request, 'portfolio/investment_list.html', {'investments': investments})
    else:
        # print("else")
