@@ -24,3 +24,4 @@ urllib3==1.22
 watson-developer-cloud==0.26.1
 whitenoise==3.3.0
 yahoo-finance==1.4.0
+APScheduler==3.0.0
