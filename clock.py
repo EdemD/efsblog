@@ -16,12 +16,6 @@ def timed_job():
 									  database="d5k81ffjrgb3gr",
 									  sslmode="require")
 		cursor = connection.cursor()
-		# Print PostgreSQL Connection properties
-		print(connection.get_dsn_parameters(), "\n")
-		# Print PostgreSQL version
-		cursor.execute("SELECT version();")
-		record = cursor.fetchone()
-		print("You are connected to - ", record, "\n")
 		
 		cursor.execute("SELECT table_schema || '.' || table_name FROM information_schema.tables WHERE table_type = 'BASE TABLE' AND table_schema NOT IN ('pg_catalog', 'information_schema');")
 		tables = cursor.fetchall()
@@ -29,8 +23,12 @@ def timed_job():
 		for i in tables:
 			print(i)
 		
-		
-		# print("Here are our customers - ", customer, "\n")
+		cursor.execute("SELECT * FROM portfolio_customer;")
+		customers = cursor.fetchall()
+		print("Here are our customers","\n")
+		# loop to print all the data
+		for i in customers:
+			print(i)
 		
 		cursor.close()
 		connection.close()
