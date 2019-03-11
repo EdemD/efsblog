@@ -7,7 +7,7 @@ sched = BlockingScheduler()
 def timed_job():
    print('This job is run every three minutes.')
    
-    import psycopg2
+    # import psycopg2
     try:
         connection = psycopg2.connect(user = "lcpswybvhdtxgt",
                                       password = "eb128c6e75b41212a5709223ffa9ec58f975939f2267bf262e07e93729e222f3",
