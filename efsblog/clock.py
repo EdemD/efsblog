@@ -24,22 +24,24 @@ try:
     cursor.execute("SELECT version();")
     record = cursor.fetchone()
     print("You are connected to - ", record, "\n")
+    cursor.close()
+    connection.close()
+    # print("PostgreSQL connection is closed")
 except (Exception, psycopg2.Error) as error:
     print("Error while connecting to PostgreSQL", error)
 finally:
     # closing database connection.
-    if (connection):
-        cursor.close()
-        connection.close()
-        print("PostgreSQL connection is closed")
+    # if (connection):
+    # cursor.close()
+    # connection.close()
+    print("PostgreSQL connection is closed")
 
-        # store all the fetched data in the ans variable
+    # store all the fetched data in the ans variable
 
-
-# ans= crsr.fetchall()
-
-# loop to print all the data
-# for i in ans:
-#    print(i)
+    # ans= crsr.fetchall()
+    
+    # loop to print all the data
+    # for i in ans:
+    #    print(i)
 
 sched.start()
