@@ -23,9 +23,9 @@ def timed_job():
 		record = cursor.fetchone()
 		print("You are connected to - ", record, "\n")
 		
-		cursor.execute("SELECT * from Customer;")
-		record = cursor.fetchone()
-		print("Here are our customers - ", record, "\n")
+		cursor.execute("SELECT * from public.customer;")
+		customer = cursor.fetchone()
+		print("Here are our customers - ", customer, "\n")
 		
 		cursor.close()
 		connection.close()
