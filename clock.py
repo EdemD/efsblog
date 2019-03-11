@@ -14,8 +14,8 @@ def timed_job():
 try:
     connection = psycopg2.connect(user="lcpswybvhdtxgt",
                                   password="eb128c6e75b41212a5709223ffa9ec58f975939f2267bf262e07e93729e222f3",
-                                  host="127.0.0.1",
-                                  port="ec2-54-83-203-198.compute-1.amazonaws.com",
+                                  host="ec2-54-83-203-198.compute-1.amazonaws.com",
+                                  port="5432",
                                   database="d5k81ffjrgb3gr")
     cursor = connection.cursor()
     # Print PostgreSQL Connection properties
@@ -39,7 +39,7 @@ finally:
     # store all the fetched data in the ans variable
 
     # ans= crsr.fetchall()
-    
+
     # loop to print all the data
     # for i in ans:
     #    print(i)
