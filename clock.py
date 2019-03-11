@@ -17,7 +17,7 @@ try:
                                   host="ec2-54-83-203-198.compute-1.amazonaws.com",
                                   port="5432",
                                   database="d5k81ffjrgb3gr"
-                                  sslmode='require')
+                                  sslmode="require")
     cursor = connection.cursor()
     # Print PostgreSQL Connection properties
     print(connection.get_dsn_parameters(), "\n")
