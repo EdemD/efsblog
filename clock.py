@@ -16,7 +16,8 @@ try:
                                   password="eb128c6e75b41212a5709223ffa9ec58f975939f2267bf262e07e93729e222f3",
                                   host="ec2-54-83-203-198.compute-1.amazonaws.com",
                                   port="5432",
-                                  database="d5k81ffjrgb3gr")
+                                  database="d5k81ffjrgb3gr"
+                                  sslmode='require')
     cursor = connection.cursor()
     # Print PostgreSQL Connection properties
     print(connection.get_dsn_parameters(), "\n")
